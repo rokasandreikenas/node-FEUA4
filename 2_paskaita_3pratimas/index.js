@@ -7,7 +7,7 @@ app.use(cors());
 
 const port = 3000;
 
-const products = [];
+const products = [{ name: "Pienas", price: 1 }];
 
 app.get("/products", (req, res) => {
   res.send(products);
