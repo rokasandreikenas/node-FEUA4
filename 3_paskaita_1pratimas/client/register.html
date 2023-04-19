@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register User Page</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        background-color: rgb(157, 248, 248);
+        padding: 10px;
+        font-family: sans-serif;
+        text-align: center;
+      }
+      form {
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .input-group {
+        width: 600px;
+        display: flex;
+        margin: 10px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      label {
+        font-weight: 600;
+      }
+      input {
+        border: 2px solid darkslategrey;
+        outline: none;
+        border-radius: 5px;
+        padding: 7px;
+        width: 300px;
+      }
+      .agreement-group input {
+        margin: 0;
+        align-self: flex-end;
+      }
+      input,
+      button,
+      label {
+        font-family: sans-serif;
+        font-size: 18px;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+      button {
+        margin-top: 10px;
+        background-color: darkslategrey;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 30px;
+        transition: all 0.3s ease-in;
+      }
+      button:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Registracija naujiems klientams</h1>
+    <form action="">
+      <div class="input-group">
+        <label for="password">Slaptazodis:*</label>
+        <input type="text" id="password" />
+      </div>
+      <div class="input-group">
+        <label for="repeat-password">Pakartokite slaptazodi:*</label>
+        <input type="text" id="repeat-password" />
+      </div>
+      <div class="input-group">
+        <label for="email">El pastas:*</label>
+        <input type="text" id="email" />
+      </div>
+      <div class="input-group">
+        <label for="firstname">Vardas:*</label>
+        <input type="text" id="firstname" />
+      </div>
+      <div class="input-group">
+        <label for="surname">Pavarde:*</label>
+        <input type="text" id="surname" />
+      </div>
+      <div class="input-group">
+        <label for="address">Adresas:*</label>
+        <input type="text" id="address" />
+      </div>
+      <div class="input-group">
+        <label for="postcode">Pasto kodas:*</label>
+        <input type="text" id="postcode" />
+      </div>
+      <div class="input-group">
+        <label for="city">Miestas:*</label>
+        <input type="text" id="city" />
+      </div>
+      <div class="input-group">
+        <label for="phone">Telefonas:*</label>
+        <input type="text" id="phone" />
+      </div>
+      <div class="input-group agreement-group">
+        <label for="agreement">As sutinku su paslaugu teikimo salygomis:</label>
+        <input type="checkbox" id="agreement" />
+      </div>
+      <button type="submit" class="btn">Registruotis</button>
+    </form>
+    <script src="register.js"></script>
+  </body>
+</html>
