@@ -28,4 +28,10 @@ app.post("/users", (req, res) => {
   res.send(users);
 });
 
+app.post("/login", (req, res) => {
+  // Patikrinti ar egzistuoja vartotojas
+
+  res.send({ message: "" });
+});
+
 app.listen(port, () => console.log(`Server started on port ${port}...`));
