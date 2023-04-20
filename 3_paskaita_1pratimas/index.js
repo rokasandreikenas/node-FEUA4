@@ -29,9 +29,29 @@ app.post("/users", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  // Patikrinti ar egzistuoja vartotojas
-
-  res.send({ message: "" });
+  // req.body = {email: "rokas@gmail.com", password: "rokas123"}
+  //
+  let foundedUser = users.find((user) => user.email === req.body.email);
+  // jeigu randa foundedUser = {email: "rokas@gmail.com", password: "rokas123", ...}
+  // jeigu neranda foundedUser = undefined
+  if (foundedUser !== undefined) {
+    // rado
+    let submittedPassword = req.body.password; // test
+    let storedPassword = foundedUser.password; // test
+    // test === test
+    // rokas123 === rokas123!
+    if (submittedPassword === storedPassword) {
+      res.send({ message: "Sekmingai prisijungete", approved: true });
+    } else {
+      res.send({ message: "Neteisingas slaptažodis", approved: false });
+    }
+  } else {
+    // nerado
+    res.send({
+      message: "Neteisingas el. paštas",
+      approved: false,
+    });
+  }
 });
 
 app.listen(port, () => console.log(`Server started on port ${port}...`));
