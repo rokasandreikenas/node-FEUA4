@@ -9,8 +9,8 @@
 // 1000XM4", "Bose QuietComfort 35 II"]).
 // 5. Sukurkite GET route, į kurį pasikreipus, grąžins visų prekių, kurių kiekis sandėlyje yra
 // mažesnis už nurodytą kiekį, pavadinimus ir likutis (formatas: [{"name": "Samsung Galaxy S22", "stock": 5}, {"name": "Dell XPS 15", "stock": 3}]).
-// Papildomas: Sukurkite dinaminį GET route, kuris pagal kainos intervalą grąžins prekes, kurių kaina yra tarp nurodytų ribų (įskaitant jas). Parametrai turėtų būti perduodami URL kaip minPrice ir maxPrice.(du parametrai reikalingi)
-// Papildomas: Sukurkite POST route, kuris leis pridėti naują prekę prie duomenų sąrašo. Nauja prekė turėtų turėti id, name, category, price ir stock laukus. Užtikrinkite, kad naujoji prekė neturėtų to paties id kaip jau esančios prekės.
+// 6. Papildomas: Sukurkite dinaminį GET route, kuris pagal kainos intervalą grąžins prekes, kurių kaina yra tarp nurodytų ribų (įskaitant jas). Parametrai turėtų būti perduodami URL kaip minPrice ir maxPrice.(du parametrai reikalingi)
+// 7. Papildomas: Sukurkite POST route, kuris leis pridėti naują prekę prie duomenų sąrašo. Nauja prekė turėtų turėti id, name, category, price ir stock laukus. Užtikrinkite, kad naujoji prekė neturėtų to paties id kaip jau esančios prekės.
 
 const express = require("express");
 const cors = require("cors");
