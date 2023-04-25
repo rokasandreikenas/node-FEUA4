@@ -21,6 +21,9 @@ app.get("/", (req, res) => {
 // 2
 app.get("/cars/:model", (req, res) => {
   const model = req.params.model;
+
+  // "gmc" === "GMC" nelygu
+  // "gmc" === "gmc" lygu
   const filteredClients = data.filter(
     (client) => client.car.toLowerCase() === model.toLowerCase()
   );
@@ -29,14 +32,16 @@ app.get("/cars/:model", (req, res) => {
 
 // 3
 app.get("/clients/:id", (req, res) => {
-  const id = req.params.id;
-  // 1 === "1"
+  const id = req.params.id; // visada stringas
+  // 1 === "1" nera tiesa
+  // Number(num) => sutrumpinta versija +num
   const foundClient = data.find((client) => client.id === +id);
   res.send(foundClient);
 });
 
 // 4 ["anb@abc.com", "abc@abc.com", "abc@acb.com]
 app.get("/emails", (req, res) => {
+  // map - iš vienos struktūros į kitą struktūrą
   const emails = data.map((client) => client.email);
   res.send(emails);
 });
