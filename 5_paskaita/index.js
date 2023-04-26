@@ -3,7 +3,7 @@
 // 2. Komanda "npm init", kuri sukurs jums package.json ir index.js failus, bet reikės susirašyti reikalingus modulius atskirai
 // 3. Persikopijuoti package.json failą ir index.js failą (prasitrinti nereikalingas eilutes). Užtenka parašyti "npm install", kad surašyti visus modulius
 
-// 1. Terminale pasirašome "npm install nodemon"
+// 1. Terminale įrašome "npm install nodemon"
 // 2. prisidedame į package.json failą scripts skiltį naują skriptą "dev": "nodemon index.js"
 // 3. leidžiame aplikaciją terminale su komanda "npm run dev", run reikalingas, nes komanda sukurta mūsų, o ne sistemiška
 
