@@ -49,4 +49,17 @@ app.delete('/todos/:id', (req, res) => {
   }
 });
 
+app.put('/todos/:id', (req, res) => {
+  const id = +req.params.id;
+  const foundIndex = todos.findIndex((todo) => todo.id === id);
+  if (foundIndex !== -1) {
+    const todo = req.body; // naujai siunčiamas todo
+    const updatingTodo = { id, ...todo }; // senas id + naujas todo
+    todos.splice(foundIndex, 1, updatingTodo); // užkeičiamas atnaujintas todo
+    res.send(updatingTodo);
+  } else {
+    res.status(404).send({ message: 'Todo not found' });
+  }
+});
+
 app.listen(port, () => console.log(`Server started on port ${port}...`));
