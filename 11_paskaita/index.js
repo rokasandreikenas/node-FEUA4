@@ -92,9 +92,10 @@ app.delete('/owners/:id', async (req, res) => {
   }
 });
 
-app.post('/pets', async (req, res) => {
+app.post('/pets/:id', async (req, res) => {
   // prieš pridedant gyvūną, reikia pridėti jų savininkų kolekciją
   try {
+    const { id } = req.params;
     const con = await client.connect();
     const data = await con
       .db(dbName)
@@ -103,7 +104,7 @@ app.post('/pets', async (req, res) => {
         {
           type: 'cat',
           name: 'Murka',
-          ownerId: new ObjectId('645a7886c5e5702f9adb146f'), // išsitraukiam iš jau esamų ownerių
+          ownerId: new ObjectId(id), // pasiimam iš parametrų pvz. /pets/645a7886c5e5702f9adb1470
         },
       ]);
     await con.close();
